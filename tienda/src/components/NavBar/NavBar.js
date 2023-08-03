@@ -4,7 +4,7 @@ function NavBar(){
     return (
         <nav class="navbar navbar-expand-lg  p-0 m-0" aria-label="Offcanvas navbar large" >
         <div className=" container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" >
             <h1 className="titulo-pagina">Cooking Time</h1>
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
@@ -20,16 +20,16 @@ function NavBar(){
             <div className="offcanvas-body">
                 <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="#">Budines</a>
+                        <a className="nav-link" aria-current="page" >Budines</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="#">Alfajores</a>
+                        <a className="nav-link" aria-current="page" >Alfajores</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="#">Brownies</a>
+                        <a className="nav-link" aria-current="page" >Brownies</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="#"><CardWidget/></a>
+                        <a className="nav-link" aria-current="page" ><CardWidget/></a>
                     </li>
                     
                 </ul>
