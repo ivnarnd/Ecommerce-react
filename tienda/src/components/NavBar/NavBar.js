@@ -1,3 +1,5 @@
+import CardWidget from "../CardWidget/CardWidget";
+
 function NavBar(){
     return (
         <nav class="navbar navbar-expand-lg  p-0 m-0" aria-label="Offcanvas navbar large" >
@@ -27,8 +29,9 @@ function NavBar(){
                         <a className="nav-link" aria-current="page" href="#">Brownies</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="#">🛒</a>
+                        <a className="nav-link" aria-current="page" href="#"><CardWidget/></a>
                     </li>
+                    
                 </ul>
 
             </div>
