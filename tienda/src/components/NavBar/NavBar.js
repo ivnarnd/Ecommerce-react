@@ -2,7 +2,7 @@ import CardWidget from "../CardWidget/CardWidget";
 
 function NavBar(){
     return (
-        <nav class="navbar navbar-expand-lg  p-0 m-0" aria-label="Offcanvas navbar large" >
+        <nav className="navbar navbar-expand-lg  p-0 m-0" aria-label="Offcanvas navbar large" >
         <div className=" container-fluid">
         <h1 className="titulo-pagina navbar-brand">Cooking Time</h1>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"

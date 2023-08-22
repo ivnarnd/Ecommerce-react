@@ -13,7 +13,7 @@ const products = [
 let getProducts = new Promise((res,rej)=>{
     setTimeout(()=>{
         res(products);
-    },2000);
+    },"2000");
 });
 
 export default getProducts;
