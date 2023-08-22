@@ -1,8 +1,10 @@
+import Item from "../Item/Item";
+
 let ItemList = ({products})=> {
    return(
-    <ul>
+    <ul className="row row-cols-1 row-cols-md-2 g-4">
         {products.map((product)=>{
-            return(<li key={product.id}>{product.title}</li>) 
+            return(<Item product = {product}/>); 
         })}
     </ul>
    )
