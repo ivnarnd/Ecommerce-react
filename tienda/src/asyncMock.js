@@ -28,10 +28,10 @@ export let getProductsbyCategory = (category)=>{
 };
 
 export let getProductsbyId = (id)=>{
-    let productsbyId = products.find(prod=>prod.id === id); 
+    let productbyId = products.find(prod=>prod.id === Number(id)); 
     return new Promise((res)=>{
         setTimeout(()=>{
-            res(productsbyId);
+            res(productbyId);
         },"2000");
     })
 };
