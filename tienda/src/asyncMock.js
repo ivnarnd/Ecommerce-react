@@ -10,10 +10,30 @@ const products = [
     {"id":10,"title":"Tiramisú","description":"Clásico tiramisú italiano con capas de café y crema de mascarpone.","price":280,"thumbnail":"https://img2.rtve.es/v/5558860?w=1600&preview=1587055647280.jpg","code":"TIR010","stock":8,"status":true,"category":"Postres"}
 ]
 
-let getProducts = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res(products);
-    },"2000");
-});
+export let getProducts =()=>{ 
+    return new Promise((res)=>{
+        setTimeout(()=>{
+                    res(products);
+        },"2000");
+    });
+}
 
-export default getProducts;
+export let getProductsbyCategory = (category)=>{
+    let productsbyId = products.filter(prod=>prod.category === category) 
+    return new Promise((res)=>{
+        setTimeout(()=>{
+            res(productsbyId);
+        },"2000");
+    })
+};
+
+export let getProductsbyId = (id)=>{
+    let productsbyId = products.find(prod=>prod.id === id); 
+    return new Promise((res)=>{
+        setTimeout(()=>{
+            res(productsbyId);
+        },"2000");
+    })
+};
+
+
