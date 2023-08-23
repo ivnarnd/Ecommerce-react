@@ -10,7 +10,7 @@ function NavBar(){
             aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2"
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar2"
             aria-labelledby="offcanvasNavbar2Label">
             <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasNavbar2Label">Cooking Time</h5>
