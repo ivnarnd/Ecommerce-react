@@ -12,6 +12,9 @@ nav {
     color: white; }
 
 /*enlaces del menu*/
+.link{
+  text-decoration: none;
+}
 .nav-item .nav-link {
   text-decoration: none;
   color: white;

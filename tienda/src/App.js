@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
             <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos!"/>}/>
             <Route exact path="/category/:id" element={<ItemListContainer greeting="Bienvenidos!"/>}/>
+            <Route exact path="/item/:itemId" element={<ItemDetailContainer/>}/>
         </Routes>
     </BrowserRouter>
   );
