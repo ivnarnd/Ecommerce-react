@@ -1,4 +1,9 @@
+import ItemCount from "../ItemCount/ItemCount";
+
 let ItemDetail=({product})=>{
+    const handlerAdd = (quantity)=>{
+        console.log('La cantida agregada al producto es: ',quantity);
+    }
     return(
     <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div className="col-10 col-sm-8 col-lg-6">
@@ -11,6 +16,7 @@ let ItemDetail=({product})=>{
                 <p className="card-text">Stock Disponible:{product.stock}</p>
                 <p className="card-text">Precio: ${product.price}</p>
             </div>
+            <ItemCount stock={product.stock} initial={1} onAdd={handlerAdd}></ItemCount>
         </div>
     </div>
     
