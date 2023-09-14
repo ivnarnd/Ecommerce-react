@@ -1,7 +1,13 @@
-import React, { useState } from "react";
-const CartContext = React.createContext({cart:[]});
-const CartProvider = ({children})=>{
+import {createContext, useState } from "react";
+
+export const CartContext = createContext({
+    cart:[]
+});
+
+export const CartProvider = ({children})=>{
+
     const [cart,setCart]=useState([]);
+    
     const isInCart = (itemId) =>{
         return cart.some((prod)=>prod.id === itemId);
     }
@@ -24,4 +30,3 @@ const CartProvider = ({children})=>{
     )
 }
 
-export default CartProvider;

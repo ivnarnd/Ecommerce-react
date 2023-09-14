@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import {CartContext} from "../../context/CartContext";
 
 let ItemDetail=({product})=>{
     const [quantityAdded,setQuantityAdd] = useState(0);
+    const {addItem} = useContext(CartContext);
     const handlerAdd = (quantity)=>{
         setQuantityAdd(quantity);
+        const item = {
+            id:product.id,
+            title:product.title,
+            price:product.price
+        };
+        addItem(item,quantity);
     }
     return(
     <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
