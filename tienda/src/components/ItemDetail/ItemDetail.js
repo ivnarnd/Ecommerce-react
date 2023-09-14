@@ -1,8 +1,11 @@
+import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 let ItemDetail=({product})=>{
+    const [quantityAdded,setQuantityAdd] = useState(0);
     const handlerAdd = (quantity)=>{
-        console.log('La cantida agregada al producto es: ',quantity);
+        setQuantityAdd(quantity);
     }
     return(
     <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -16,7 +19,10 @@ let ItemDetail=({product})=>{
                 <p className="card-text">Stock Disponible:{product.stock}</p>
                 <p className="card-text">Precio: ${product.price}</p>
             </div>
-            <ItemCount stock={product.stock} initial={1} onAdd={handlerAdd}></ItemCount>
+            <div>
+                {quantityAdded>0?<Link to='/cart'>Terminar Compra</Link>:<ItemCount stock={product.stock} initial={1} onAdd={handlerAdd}></ItemCount>}
+            </div>
+            
         </div>
     </div>
     
