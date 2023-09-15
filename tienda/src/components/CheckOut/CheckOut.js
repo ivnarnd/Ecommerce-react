@@ -1,9 +1,10 @@
-import {useState,useContext} from 'react';
+import {useState,useContext, useEffect} from 'react';
 import FormUser from '../FormUser/FormUser';
 import { CartContext } from '../../context/CartContext';
 import{getFirestore,collection,addDoc} from 'firebase/firestore';
 const CheckOut = ()=>{
-    const [id, setId] = useState('');
+
+    const [id, setId] = useState(false);
     const {cart,totalPrice} = useContext(CartContext);
     const [form, setForm] = useState({
         fullname: '',
@@ -14,21 +15,30 @@ const CheckOut = ()=>{
          buyer:{},
          items:[],
          total:0,
-         date:''
+         date:'',
+         generate:false
      });
     
     const submitHandler = (e) => {
         e.preventDefault();
-        setOrder(...form,cart,totalPrice,new Date());
+        setOrder({buyer:{...form},items:cart,total:totalPrice(),date:new Date(),generate:true});
+    };
+    const finishHandler =()=>{
         const db = getFirestore();
-        const orderCollection = collection(db, 'orders');
+        const orderCollection = collection(db,'orders');
         addDoc(orderCollection, order).then((snapshot) => setId(snapshot.id));
-      };
+    }
+    useEffect(()=>{
+    if(id){
+        window.location.href='/';
+    }
+    },[id])
     return(
         <>
             <h2>CheckOut</h2>
-            {id!==''?<FormUser submitHandler={submitHandler} form={form} setForm={setForm}></FormUser>:<div>La compra se ha generado correctamente con id: {id}</div>}
-            
+            {!order.generate?<FormUser submitHandler={submitHandler} form={form} setForm={setForm}/>
+            :
+             <button onClick={finishHandler}>Finalizar Compra</button>}
         </>
     );
 }

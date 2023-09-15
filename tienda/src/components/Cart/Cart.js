@@ -20,7 +20,7 @@ const Cart = ()=>{
             </ul>
             <h3>Total:${totalPrice()}</h3>
             <button onClick={clearCart}>Limpiar Carrito</button>
-            <button>Checkout</button>
+            <Link to='/checkout'>Checkout</Link>
         </div>
     );
 };

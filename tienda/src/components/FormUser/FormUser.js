@@ -1,5 +1,5 @@
 
-const FormUser = (submitHandler,form,setForm)=>{
+const FormUser = ({submitHandler,form,setForm})=>{
     const changeHandler = (ev) => {
         const { name, value } = ev.target;
         setForm({ ...form, [name]: value });
@@ -19,8 +19,8 @@ const FormUser = (submitHandler,form,setForm)=>{
                 </div>
 
                 <div>
-                    <label htmlFor="phone">Mensaje:</label>
-                    <input type="phone" id="phone" name="phone"  value={form.phone} onChange={changeHandler}/>
+                    <label htmlFor="phone">Telefono:</label>
+                    <input type="number" id="phone" name="phone"  value={form.phone} onChange={changeHandler}/>
                 </div>
 
                 <button>Enviar</button>
