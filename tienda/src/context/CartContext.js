@@ -25,7 +25,6 @@ export const CartProvider = ({children})=>{
     }
     const totalItems = ()=>{
        const totalItemsCount =  cart.reduce((acum,item)=>{return acum+item.quantity},0);
-       console.log(totalItemsCount);
        return totalItemsCount;
     }
     const totalPrice = ()=>{
