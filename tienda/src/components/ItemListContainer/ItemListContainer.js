@@ -1,18 +1,21 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import {getProducts,getProductsbyCategory} from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import {getFirestore,collection, getDocs, query, where} from 'firebase/firestore';
 
 function ItemListContainer({greeting}) {
     const [products,setProducts] = useState([]);
     const {id} = useParams();
 
     useEffect(()=>{
-        const petition = id? getProductsbyCategory : getProducts;
-        petition(id)
-        .then(resp=>setProducts(resp))
-        .catch(error => console.error(error));
+        const db = getFirestore();
+        const itemsCollection = collection(db,'item');
+        const petition = id?query(itemsCollection,where('category','==',id)):itemsCollection;
+        getDocs(petition).then(snapshot =>{
+            const items = snapshot.docs.map((doc)=>({id:doc.id,...doc.data()}));
+            setProducts(items);
+        });
     },[id]);
 
     return(
