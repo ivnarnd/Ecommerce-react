@@ -19,9 +19,15 @@ function ItemListContainer() {
     },[id]);
 
     return(
-        <div>
-            <ItemList products={products}/>
-        </div>
+        <main className="main-justificado">
+            <section className="contenedor-titulo">
+                <h3 className="titulo">Tienda</h3>
+            </section>
+            <section className="contenedor-tienda">
+                <ItemList products={products}/>
+            </section>
+    </main>
+       
     )
 }
 export default ItemListContainer;
