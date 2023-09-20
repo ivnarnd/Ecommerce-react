@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {CartProvider}from './context/CartContext';
 import Cart from './components/Cart/Cart';
 import CheckOut from './components/CheckOut/CheckOut';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
               <Route exact path='/cart' element={<Cart/>}/>
               <Route exact path='/checkout' element={<CheckOut/>}/>
           </Routes>
+          <Footer/>
         </CartProvider>        
     </BrowserRouter>
   );
