@@ -9,11 +9,14 @@ export const CartProvider = ({children})=>{
     const [cart,setCart]=useState([]);
     
     const isInCart = (itemId) =>{
-        return cart.some((prod)=>prod.id === itemId);
+        return cart.findIndex((prod)=>prod.id === itemId);
     }
     const addItem = (item,quantity) =>{
-        if(!isInCart(item.id)){
+        const index = isInCart(item.id);
+        if(index === -1){
             setCart(prev=>[...prev,{...item,quantity}]);
+        }else{
+            cart[index].quantity+=quantity;
         }
     }
     const removeItem = (itemId)=>{
