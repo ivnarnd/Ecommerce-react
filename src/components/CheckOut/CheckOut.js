@@ -2,6 +2,11 @@ import {useState,useContext, useEffect} from 'react';
 import FormUser from '../FormUser/FormUser';
 import { CartContext } from '../../context/CartContext';
 import{getFirestore,collection,addDoc} from 'firebase/firestore';
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal);
+
 const CheckOut = ()=>{
 
     const [id, setId] = useState(false);
@@ -29,10 +34,17 @@ const CheckOut = ()=>{
         addDoc(orderCollection, order).then((snapshot) => setId(snapshot.id));
     }
     useEffect(()=>{
-    if(id){
-        window.location.href='/';
-    }
-    },[id])
+        if(id){
+            MySwal.fire({
+                title: <strong>Su compra fue realizada con exito</strong>,
+                html: <i>Id de orden:${id}</i>,
+                icon: 'success'
+            })
+            .then(() => {
+                window.location.href='/';
+            })
+        }
+    },[id]);
     return(
         <>
             <h2>CheckOut</h2>
