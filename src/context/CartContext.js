@@ -16,7 +16,9 @@ export const CartProvider = ({children})=>{
         if(index === -1){
             setCart(prev=>[...prev,{...item,quantity}]);
         }else{
-            cart[index].quantity+=quantity;
+            let updateCart = [...cart];
+            updateCart[index].quantity+=quantity;
+            setCart(updateCart);
         }
     }
     const removeItem = (itemId)=>{
