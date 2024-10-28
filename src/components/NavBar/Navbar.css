@@ -1,3 +1,12 @@
-.barra-nav{
-    color: black;
+header{
+  font-family: mogena;
+  background-color: #FFE2EC;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+h1{
+  color: #DF0909;
+  font-size: 1.7rem;
 }

@@ -1,29 +1,14 @@
-import { NavLink } from "react-router-dom";
+
 import CardWidget from "../CardWidget/CardWidget";
+import './Navbar.css';
+import HamburgerMenu from "../HamburguerMenu/HamburgerMenu";
 function NavBar() {
-    return (
-        <nav >
-            <NavLink to="/">
-                <h1>Cooking Time</h1>
-            </NavLink>
-            <ul>
-                <li >
-                    <NavLink to='/category/Repostería'>Reposteria</NavLink>
-                </li>
-                <li >
-                    <NavLink to='/category/Merienda'>Merienda</NavLink>
-                </li>
-                <li >
-                    <NavLink to='/category/Postres'>Postres</NavLink>
-                </li>
-                <li >
-                    <NavLink to='/category/Desayuno'>Desayuno</NavLink>
-                </li>
-                <li >
-                    <CardWidget />
-                </li>
-            </ul>
-        </nav>
+    return(
+        <header>
+            <h1>Cooking Time</h1>
+            <CardWidget></CardWidget>
+            <HamburgerMenu></HamburgerMenu>
+        </header>
     );
 }
 export default NavBar;
