@@ -3,7 +3,7 @@ import { useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import {getFirestore,collection, getDocs, query, where} from 'firebase/firestore';
-
+import './ItemListContainer.css';
 function ItemListContainer() {
     const [products,setProducts] = useState([]);
     const {id} = useParams();
@@ -21,12 +21,12 @@ function ItemListContainer() {
     return(
         <main>
             <section>
-                <h3>Tienda</h3>
+                <h2>Tienda</h2>
             </section>
             <section>
-                <ItemList products={products}/>
+                <ItemList products={products} />
             </section>
-    </main>
+        </main>
        
     )
 }

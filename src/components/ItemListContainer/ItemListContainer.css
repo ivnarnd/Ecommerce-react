@@ -1,0 +1,12 @@
+main{
+    background-color: white;
+    margin: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-family: "mogena";
+    min-height: 80vh;
+}
+main section h2{
+    font-size: 3rem;
+    color: #df0909;
+}
