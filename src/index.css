@@ -3,6 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "mogena";
+  src: url("../public/Mogena.ttf");
+}
 a{
   text-decoration: none;
 }
