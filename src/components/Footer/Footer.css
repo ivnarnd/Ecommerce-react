@@ -1,0 +1,14 @@
+footer{
+    font-family: "mogena";
+    min-height: 5vh;
+    background-color: #FFE2EC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer p{
+    font-size: 1.2rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #df0909;
+}

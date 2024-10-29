@@ -1,7 +1,8 @@
+import './Footer.css';
 const Footer =()=>{
     return(
     <footer>
-        <p> Desarrollado por Ivan Aranda - 2023 &#169</p>
+        <p> Desarrollado por Ivan Aranda  2024</p>
     </footer>
     );
 }
